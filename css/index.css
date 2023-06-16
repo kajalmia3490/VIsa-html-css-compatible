@@ -28,18 +28,75 @@ header {
 }
 
 /* navbar */
-nav ul {
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px;
+}
+
+.menu-toggle {
+  display: none;
+  flex-direction: column;
+  cursor: pointer;
+  border: none;
+}
+
+.menu-toggle span {
+  width: 25px;
+  height: 3px;
+  background-color: gray;
+  margin-bottom: 5px;
+}
+
+.menu {
+  display: flex;
+  justify-content: space-between;
+}
+
+.menu a {
+  color: #333;
+  text-decoration: none;
+  margin: 0 10px;
+  font-size: small;
+}
+
+.menu a:hover {
+    border-bottom: 2px solid purple;
+}
+
+@media (max-width: 768px) {
+  .menu-toggle {
     display: flex;
+  }
+  
+  .menu {
+    display: none;
+    flex-direction: column;
+    background-color: #f2f2f2;
+    padding: 10px;
+    text-align: center;
+    position: absolute;
+    top: 55px;
+    left: 0;
+    width: 100%;
+  }
+  
+  .menu a {
+    margin: 5px 0;
+  }
+
+  .menu a:hover {
+    background-color: #0296CE;
+    border-bottom: none;
+    color: white;
+}
+  
+  .menu.show {
+    display: flex;
+  }
 }
 
-nav ul li a {
-    margin-right: 30px;
-}
-
-nav ul li a:hover {
-    border-bottom: 3px solid #0296CE;
-    color: gray;
-}
 
 /* main section */
 .section {
